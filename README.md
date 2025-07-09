@@ -18,3 +18,34 @@ Kod rozdzielony na moduły (np. data_loader, model, trainer, main)
 Użycie generatorów do przetwarzania danych
 
 Prosty test jednostkowy do sprawdzenia działania modelu
+
+
+Instalacja:
+
+```bash
+pip install tensorflow numpy pandas yfinance scikit-learn matplotlib
+```
+Uruchomienie:
+
+```bash
+python main.py
+```
+
+Struktura projektu
+data_loader.py — pobieranie i przygotowanie danych
+
+model.py — definicja modelu sieci neuronowej
+
+trainer.py — trenowanie modelu i wykresy
+
+utils.py — funkcje pomocnicze (zapisywanie modelu, skalera)
+
+main.py — skrypt uruchamiający cały proces
+
+Możliwe usprawnienia
+Dodanie interfejsu użytkownika
+
+Eksperymenty z różnymi modelami
+
+Automatyzacja pobierania danych i aktualizacji modelu
+

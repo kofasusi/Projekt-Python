@@ -37,5 +37,6 @@ def prepare_sequences(data: pd.DataFrame, sequence_length: int = 30):
         y.append(target)
 
     X = np.array(X)
+    X = X.reshape(X.shape[0], X.shape[1])  # wymuszenie 2D dla Dense modelu
     y = np.array(y)
     return X, y
