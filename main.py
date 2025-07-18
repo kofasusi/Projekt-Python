@@ -4,6 +4,7 @@ from data_loader import download_stock_data, prepare_sequences
 from model import build_dense_model
 from trainer import train_model, plot_predictions
 from sklearn.preprocessing import MinMaxScaler
+from dataset import StockDataset
 
 def main():
     # 1. Pobierz dane
@@ -13,9 +14,11 @@ def main():
         return
 
     # 2. Przygotuj dane
-    X, y = prepare_sequences(data, sequence_length=30)
-    X = X.reshape(X.shape[0], X.shape[1])  # spłaszcz jeśli X ma dodatkowy wymiar
 
+    dataset = StockDataset("AAPL", data['Close'].values, sequence_length=30)
+    X, y = dataset.get_features(), dataset.get_targets()
+    print(dataset.summary())
+    X = X.reshape(X.shape[0], X.shape[1])  # spłaszcz jeśli X ma dodatkowy wymiar
     # 3. Skaluj dane
     x_scaler = MinMaxScaler()
     X_scaled = x_scaler.fit_transform(X)
