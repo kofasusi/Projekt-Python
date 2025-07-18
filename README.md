@@ -1,35 +1,70 @@
-Predykcja cen akcji z uzyciem TensorFlow i danych historycznych\
-Cel Projektu\
-Aplikacja w języku Python która analizuje historyczne dane z giełdy, a następnie próbuje przewidzieć nowe dane.\
-Rezultatem będzie działający program oparty o framework TensorFlow, który wykorzystuje prosty model sieci neuronowej do prognozowania. 
-Opis funkcjonalności projektu
-Pobieranie historycznych danych akcji z API (np. Yahoo Finance przez yfinance)
 
-Przetwarzanie danych (np. wyciąganie wartości zamknięcia i normalizacja)
+Predykcja cen akcji z wykorzystaniem sieci neuronowej w TensorFlow.
 
-Uczenie modelu predykcyjnego (np. LSTM lub Dense NN)
+Cel projektu:
 
-Prognozowanie przyszłych cen akcji
+Stworzenie programu, który pobiera historyczne dane giełdowe (np. AAPL) i przewiduje przyszłe ceny na podstawie wcześniejszych wartości. Celem jest nauka obróbki danych finansowych, trenowania modelu oraz interpretacji wyników.
 
-Obsługa błędów API i danych
+Opis funkcjonalności:
 
-Kod rozdzielony na moduły (np. data_loader, model, trainer, main)
+Pobieranie danych z internetu (yfinance)
 
-Użycie generatorów do przetwarzania danych
+Przygotowanie danych (tworzenie sekwencji czasowych)
 
-Prosty test jednostkowy do sprawdzenia działania modelu
+Skalowanie danych wejściowych
+
+Budowa i trening modelu neuronowego
+
+Wykres predykcji vs rzeczywiste dane
 
 
 Instalacja:
 
 ```bash
-pip install tensorflow numpy pandas yfinance scikit-learn matplotlib
+pip install -r requirements.txt
 ```
 Uruchomienie:
 
 ```bash
 python main.py
 ```
+
+Technologie użyte w projekcie:
+
+-Python 3.9+
+
+-TensorFlow / Keras
+
+-Pandas, NumPy
+
+-scikit-learn
+
+-yfinance
+
+-Matplotlib
+
+
+Wymagania funkcjonalne:
+
+Program pobiera dane giełdowe.
+
+Trenuje model na podstawie danych historycznych.
+
+Wyświetla wykres predykcji.
+
+Wymagania niefunkcjonalne:
+
+Program ma działać lokalnie (Python CLI).
+
+Kod zorganizowany modułowo (pliki: model.py, trainer.py, data_loader.py, main.py).
+
+Używa bibliotek zgodnych z Python ≥ 3.9.
+
+Interfejs użytkownika:
+
+Użytkownik uruchamia program przez main.py — tekstowy interfejs CLI, wykres wyświetlany graficznie.
+
+
 
 Struktura projektu
 data_loader.py — pobieranie i przygotowanie danych
